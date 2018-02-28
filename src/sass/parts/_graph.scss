@@ -1,0 +1,124 @@
+.graph {
+  display: flex;
+  align-items: flex-end;
+  color: $white;
+  text-align: center;
+  border-bottom: 3px solid $text;
+  @include desktop-fonts(margin-bottom,2.4vh,2vw,17rem);
+  @include tablet-fonts(margin-bottom,25rem,20rem);
+  .mobile & {
+    margin-bottom: 10rem;
+  }
+  .left,
+  .right {
+    .desktop &,
+    .tablet & {
+      width:60px;
+    }
+    .mobile & {
+      width:50rem;
+      @include media(screen,380){
+        width:47rem;
+      }
+    }
+    box-sizing: border-box;
+    padding: 10px 4px;
+    font-family: Helvetica-Bold;
+    position: relative;
+    &.small {
+      padding: 0 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      strong {padding: 5px 4px;}
+    }
+    strong {
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      box-sizing: border-box;
+      padding: 10px 4px;
+      transition: all 0.7s;
+      width: 100%;
+      .desktop &,
+      .tablet & {
+        height: 40px;
+      }
+      .mobile & {
+        height: 100%;
+      }
+    }
+    .current & {
+      .desktop &,
+      .tablet & {
+        strong {
+          height: 100%;
+        }
+      }
+
+    }
+  }
+  .left {
+    strong {background-color: $red;}
+  }
+  .right {
+    strong {background-color: $text;}
+  }
+  &-region {
+    font-family: Helvetica-Bold;
+    @include desktop-fonts(font-size,2.4vh,2vw,20rem);
+    @include desktop-fonts(min-height,5vh,4.5vw,45rem);
+
+    @include tablet-fonts(font-size,16rem,14rem);
+    @include tablet-fonts(min-height,35rem,35rem);
+
+    .mobile & {
+      font-size: 15rem;
+      min-height: 34rem;
+    }
+  }
+  &-annotation {
+    color: $white;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-family: Helvetica-Bold;
+    .left,
+    .right {
+      width:60px;
+      height: 40px;
+      box-sizing: border-box;
+      padding: 10px 4px;
+      .mobile & {
+        width:75rem;
+        height: auto;
+        @include media(screen,380){
+          width:66rem;
+        }
+      }
+    }
+
+    .left {
+      background-color: $red;
+    }
+    .right {
+      background-color: $text;
+    }
+    &-text {
+      @include desktop-fonts(font-size,1.8vh,1.3vw,16rem);
+      @include tablet-fonts(font-size,14rem,14rem);
+    }
+
+  }
+}
+
+.graphics {
+  @include desktop-fonts(margin-bottom,6vh,4vw,45rem);
+  @include tablet-fonts(margin-bottom,40rem,42rem);
+  .mobile & {
+    margin-bottom: 40rem;
+  }
+}
+

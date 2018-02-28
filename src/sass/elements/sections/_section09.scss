@@ -1,0 +1,33 @@
+.section09 {
+  font-family: Helvetica-Black;
+  flex-direction: column;
+  color: $red;
+  .title {
+    line-height: 1;
+    @include desktop-fonts(font-size,25vh,13vw,150rem);
+    @include desktop-fonts(margin-bottom,6vh,2.4vw,24rem);
+    @include tablet-fonts(font-size,110rem,77rem);
+    @include tablet-fonts(margin-bottom,42rem,46rem);
+    .mobile & {
+      font-size: 40rem;
+    }
+  }
+  .title-continue {
+    line-height: 1.5;
+    @include desktop-fonts(font-size,3.7vh,2.2vw,25.5rem);
+    @include tablet-fonts(font-size,24rem,20rem);
+    .mobile & {
+      font-size: 16rem;
+    }
+  }
+  .mobile & {
+    padding: 40rem 5% 80rem;
+    .pull-left_1 {
+      padding-left: 5%;
+      margin-bottom: 10rem;
+    }
+    .pull-left_3 {
+      padding-left: 5%;
+    }
+  }
+}

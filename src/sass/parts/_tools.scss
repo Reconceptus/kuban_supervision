@@ -1,0 +1,65 @@
+.tools {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: wrap row;
+  box-sizing: border-box;
+  & > li {
+    box-sizing: border-box;
+    .mobile & {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: flex-end;
+      margin-bottom: 20rem;
+    }
+  }
+
+  &.full {
+    & > li {
+      width: 100%;
+    }
+  }
+  &.half {
+    & > li {
+      .desktop &,
+      .tablet & {
+        width: 50%;
+        padding-left: 4%;
+      }
+
+    }
+  }
+  i {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 3vh;
+    .mobile & {
+      margin-bottom: 0;
+    }
+  }
+  &-title {
+    text-transform: uppercase;
+    @include desktop-fonts(font-size,2.37vh,1.8vw,21rem);
+    @include tablet-fonts(font-size,15rem,13rem);
+    @include desktop-fonts(min-height,5.5vh,4.3vw,53rem);
+    @include tablet-fonts(min-height,35rem,30rem);
+    @include desktop-fonts(margin-bottom,3.1vh,2.7vw,31rem);
+    @include tablet-fonts(margin-bottom,17rem,15rem);
+    display: flex;
+    align-items: flex-end;
+    font-family: Helvetica-Bold;
+    border-bottom: 3px solid $red;
+    @include desktop-fonts(padding-bottom,3vh,1.5vw,18rem);
+    @include tablet-fonts(padding-bottom,17rem,15rem);
+    .mobile & {
+      width: 60%;
+      padding-bottom: 5rem;
+      margin-left: 30rem;
+    }
+  }
+  .mobile & {
+    .text {
+      margin-top: 30rem;
+    }
+  }
+}

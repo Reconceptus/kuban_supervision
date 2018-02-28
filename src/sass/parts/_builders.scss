@@ -1,0 +1,64 @@
+.builders {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: wrap row;
+  box-sizing: border-box;
+  &.full {
+    li {
+      width: 100%;
+    }
+  }
+  &.half {
+    .desktop &,
+    .tablet & {
+      li {
+        width: 50%;
+        padding-right: 11%;
+      }
+    }
+  }
+  li {
+    margin: 1vh 0;
+    box-sizing: border-box;
+    &[data-order='1']{order:1}
+    &[data-order='2']{order:2}
+    &[data-order='3']{order:3}
+    &[data-order='4']{order:4}
+    .name {
+      color: $red;
+      font-family: Helvetica-Black;
+      @include desktop-fonts(font-size,3.65vh,2.6vw,30rem);
+      @include tablet-fonts(font-size,21rem,21rem);
+
+      @include desktop-fonts(margin-bottom,4vh,2vw,30rem);
+      @include tablet-fonts(margin-bottom,15rem,20rem);
+
+      .mobile & {
+        font-size: 25rem;
+        margin-bottom: 15rem;
+      }
+    }
+    .description {
+      font-size: 2.08vh;
+      line-height: 1.6;
+      .desktop &,
+      .tablet & {
+        min-height: 21vh;
+      }
+      @include desktop-fonts(font-size,2.08vh,1.6vw,20rem);
+      @include tablet-fonts(font-size,16rem,17rem);
+      p {
+        &:not(:last-child){
+          margin-bottom: 5px;
+        }
+      }
+      strong {
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+    .mobile & {
+      margin-bottom: 25rem;
+    }
+  }
+}

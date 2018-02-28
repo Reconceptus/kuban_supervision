@@ -1,0 +1,26 @@
+.section12 {
+  flex-direction: column;
+  align-items: flex-end;
+  .title {
+    @include desktop-fonts(font-size,6vh,4.3vw,50rem);
+    @include tablet-fonts(font-size,28rem,25rem);
+    font-family: Helvetica-Bold;
+    @include desktop-fonts(margin-bottom,6.3vh,4.5vw,43rem);
+    @include tablet-fonts(margin-bottom,40rem,40rem);
+    .mobile & {
+      font-size: 20rem;
+      margin-bottom: 40rem;
+    }
+  }
+  .pluses-wrap {
+    width: 72%;
+    margin-right: 5%;
+    .mobile & {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  .mobile & {
+    padding: 40rem 5% 0;
+  }
+}

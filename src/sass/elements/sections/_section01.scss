@@ -1,0 +1,16 @@
+.section01 {
+  @extend %cover;
+  color: $white;
+  font-family: Helvetica-Black;
+  text-shadow: 0px 6px 13px RGBA(130,29,19,1);
+  .title {
+    @include desktop-fonts(font-size,13vh,8vw,90rem);
+    @include tablet-fonts(font-size,80rem,58rem);
+    .mobile & {
+      font-size: 40rem;
+    }
+  }
+  .mobile & {
+    padding: 170rem 5%;
+  }
+}

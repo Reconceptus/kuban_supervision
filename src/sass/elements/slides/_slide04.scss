@@ -1,0 +1,24 @@
+.slide04 {
+  .section07 & {
+    background-color: $border;
+    .objects {
+      display: flex;
+      width: 100%;
+      box-sizing: border-box;
+      align-items: stretch;
+      justify-content: space-between;
+    }
+    .titles {
+      margin-left: 8%;
+      width: 51%;
+      .mobile & {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+    .mobile & {
+      background: none;
+      padding: 10rem 5%;
+    }
+  }
+}

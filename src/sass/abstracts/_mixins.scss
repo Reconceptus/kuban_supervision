@@ -1,0 +1,45 @@
+@mixin fonts($name,$file){
+  @font-face {
+    font-family: $name;
+    src: url("../fonts/" + $file + ".ttf"),
+    url("../fonts/" + $file + ".woff"),
+    url("../fonts/" + $file + ".eot");
+  }
+}
+@mixin media($media,$w) {
+  @if $media == hover {
+    @media screen and (min-width:$w+'px'){@content;}
+  }
+  @else {
+    @media screen and (max-width:$w+'px'){@content;}
+  }
+}
+@mixin breakpoints($from,$to){
+  @media screen and (min-width:$from+'px') and (max-width:$to+'px'){@content;}
+}
+
+@mixin desktop-fonts($prop,$vh,$land,$port){
+  @media screen and (min-width: 1201px){
+    .normal-size & {
+      #{$prop}: $vh;
+    }
+  }
+  @media screen and (min-width: 1201px){
+    .landscape-size & {
+      #{$prop}: $land;
+    }
+    .portrait-size & {
+      #{$prop}: $port;
+    }
+  }
+}
+@mixin tablet-fonts($prop,$land,$port){
+  @media screen and (min-width: 768px) and (max-width: 1200px){
+    .landscape-size & {
+      #{$prop}: $land;
+    }
+    .portrait-size & {
+      #{$prop}: $port;
+    }
+  }
+}

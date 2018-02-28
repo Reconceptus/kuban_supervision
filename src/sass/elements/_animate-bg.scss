@@ -1,0 +1,61 @@
+.animate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  .image {
+    @extend %cover;
+    width: 100%;
+    height: 100%;
+    transition: all 0.7s;
+    .current & {
+      transition: all 18s;
+      transform: scale(1.1);
+    }
+  }
+  .slide-image {
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    will-change: background-position;
+    width: 100%;
+    height: 100%;
+    transition: all 0.7s;
+    transform: scale(1.15);
+    .slide03.slide_current & {
+      .section04 & {
+        transition: background-position 20s linear, transform 20s;
+        background-position: 100% center;
+        transform: scale(1.0);
+      }
+    }
+    .slide01.slide_current &,
+    .slide03.slide_current &,
+    .slide05.slide_current & {
+      .section06 & {
+        transition: transform 20s;
+        transform: scale(1.0);
+      }
+    }
+    .slide02.slide_current &,
+    .slide04.slide_current &,
+    .slide06.slide_current & {
+      .section06 & {
+        transition: transform 20s;
+        transform: scale(1.3);
+      }
+    }
+    .slide03.slide_current & {
+      .section10 & {
+        transition: transform 20s;
+        transform: scale(1.3);
+      }
+    }
+  }
+
+  & ~ * {
+    z-index: 1;
+  }
+}

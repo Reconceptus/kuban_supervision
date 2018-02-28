@@ -1,0 +1,168 @@
+.slide01 {
+  .section04 & {
+    flex-direction: column;
+    background-image: url("../svg/map-grey.svg");
+    background-position: 98% 3%;
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+    align-items: flex-start;
+    .title {
+      @include desktop-fonts(font-size,6.4vh,3.3vw,50rem);
+      @include tablet-fonts(font-size,33rem,36rem);
+      font-family: Helvetica-Bold;
+      @include desktop-fonts(margin-bottom,3vh,2vw,18rem);
+      @include tablet-fonts(margin-bottom,22rem,20rem);
+      .mobile & {
+        font-size: 20rem;
+        margin-bottom: 10rem;
+      }
+    }
+    .subtitle {
+      strong {font-weight: 700;}
+      @include desktop-fonts(font-size,2.4vh,2vw,23rem);
+      @include tablet-fonts(font-size,18rem,20rem);
+      .mobile & {
+        font-size: 15rem;
+      }
+    }
+    .mobile & {
+      padding: 100rem 5%;
+      background-position: 98% 10%;
+    }
+  }
+  .section06 & {
+    justify-content: flex-start;
+    .box {
+      position: relative;
+      z-index: 1;
+      .desktop &,
+      .tablet & {
+        margin-left: 26%;
+        margin-right: 5%;
+      }
+      .mobile & {
+        margin: 0 0 30rem;
+      }
+    }
+    figure {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      bottom: 10px;
+      width: 23%;
+      background-position: 0 center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      .mobile & {
+        display: none;
+      }
+    }
+    .title {
+      @include desktop-fonts(font-size,6vh,4.3vw,50rem);
+      @include tablet-fonts(font-size,33rem,30rem);
+      font-family: Helvetica-Bold;
+      @include desktop-fonts(margin-bottom,6.3vh,4.5vw,43rem);
+      @include tablet-fonts(margin-bottom,33rem,28rem);
+      .mobile & {
+        font-size: 20rem;
+        margin-bottom: 20rem;
+      }
+    }
+    .mobile & {
+      padding: 0 5%;
+    }
+  }
+  .section07 & {
+    justify-content: flex-start;
+    .title {
+      margin-left: 8%;
+      width: 33%;
+      @include desktop-fonts(font-size,6vh,4.3vw,50rem);
+      @include tablet-fonts(font-size,33rem,30rem);
+      font-family: Helvetica-Bold;
+      .mobile & {
+        width: 100%;
+        font-size: 22rem;
+        margin-bottom: 50rem;
+        margin-left: 0;
+        br {display: none;}
+      }
+    }
+    .builders {
+      width: 33%;
+      margin-left: 3%;
+      .mobile & {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+    .mobile & {
+      flex-direction: column;
+      padding: 40rem 5% 0;
+    }
+  }
+  .section10 & {
+    flex-direction: column;
+    align-items: flex-end;
+    .title {
+      @include desktop-fonts(font-size,6vh,4.3vw,50rem);
+      @include tablet-fonts(font-size,33rem,30rem);
+      font-family: Helvetica-Bold;
+      @include desktop-fonts(margin-bottom,6.3vh,4.5vw,43rem);
+      @include tablet-fonts(margin-bottom,33rem,33rem);
+      .mobile & {
+        font-size: 20rem;
+        margin-bottom: 40rem;
+      }
+    }
+    .targets-wrap {
+      width: 72%;
+      margin-right: 5%;
+      margin-bottom: 14vh;
+      .mobile & {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 40rem;
+      }
+    }
+    .mobile & {
+      padding: 0 5%;
+    }
+  }
+  .section11 & {
+
+    justify-content: space-between;
+    .title {
+      @include desktop-fonts(font-size,6vh,4.3vw,50rem);
+      @include tablet-fonts(font-size,33rem,28rem);
+      font-family: Helvetica-Bold;
+      @include desktop-fonts(margin-bottom,9vh,6vw,48rem);
+      @include tablet-fonts(margin-bottom,25rem,23rem);
+      .mobile & {
+        font-size: 20rem;
+        margin-bottom: 40rem;
+      }
+    }
+    .tools-description {
+      margin-left: 8%;
+      width: 51%;
+      .mobile & {
+        width: 100%;
+        margin: 0 0 20rem;
+      }
+    }
+    .tools {
+      width: 33%;
+      margin-right: 5%;
+      .mobile & {
+        width: 100%;
+        margin: 0;
+      }
+    }
+    .mobile & {
+      padding: 0 5%;
+      flex-direction: column;
+    }
+
+  }
+}

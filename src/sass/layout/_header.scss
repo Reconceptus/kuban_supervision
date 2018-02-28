@@ -1,0 +1,107 @@
+.header {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  width: 3%;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  transition: transform 0.3s;
+  transform: translateX(-100%);
+  .mobile & {display: none;}
+  &.fixed {
+    transform: translateX(0);
+    transition: transform 0.2s ease 0.7s;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: -10px;
+    bottom: -10px;
+    background-color: $red;
+    width: 10px;
+  }
+  .logo {
+    width: 100%;
+    margin-top: 4vh;
+    display: block;
+    position: relative;
+    transition: all 0.3s;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -10px;
+      bottom: 0;
+      width: 15px;
+      background-color: $red;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    &:hover {
+      transform: translateX(5px);
+    }
+  }
+  nav {
+    width: 100%;
+    flex: 1;
+    ul {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    li {
+      width: 100%;
+      height: 35%;
+      position: relative;
+    }
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      font-family: Roboto;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: #4a5460;
+      line-height: 1;
+      font-size: 2.1vh;
+      transition: all 0.3s;
+      span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%) rotate(-90deg);
+        &:after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          height: 2px;
+          width: 0;
+          margin: 12px auto 0;
+          transition: all 0.3s;
+          background-color: $red;
+        }
+      }
+      &:hover {
+        color: $red;
+      }
+      &.active {
+        color: $red;
+        span {
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

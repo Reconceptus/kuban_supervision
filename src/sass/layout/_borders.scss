@@ -1,0 +1,43 @@
+.borders {
+  & > div {
+    position: fixed;
+    background-color: $red;
+    z-index: 100;
+  }
+  .top {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    @include media(screen,480){
+      height: 5px;
+    }
+  }
+  .right {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    @include media(screen,480){
+      width: 5px;
+    }
+  }
+  .bottom {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10px;
+    @include media(screen,480){
+      height: 5px;
+    }
+  }
+  .left {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    @include media(screen,480){
+      width: 5px;
+    }
+  }
+}

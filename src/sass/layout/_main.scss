@@ -1,0 +1,36 @@
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 1px;
+  @include media(screen,600){
+    font-size: 0.6px;
+  }
+  &.ovh {
+    overflow: hidden;
+  }
+}
+body {
+  .desktop &,
+  .tablet & {
+    background-color: rgba($red,0.8);
+  }
+  width: 100%;
+  height: 100%;
+  color: $head;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+}
+svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+h1,h2,h3,h4,h5,h6 {font-size: inherit;}
+
+#main {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16rem;
+}

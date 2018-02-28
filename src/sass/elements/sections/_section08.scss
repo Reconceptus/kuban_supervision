@@ -1,0 +1,14 @@
+.section08 {
+  font-family: Helvetica-Black;
+  flex-direction: column;
+  color: $red;
+  .title {
+    font-size: 25vh;
+    margin-bottom: 5vh;
+    line-height: 1;
+  }
+  .title-continue {
+    font-size: 3.7vh;
+    line-height: 1.5;
+  }
+}

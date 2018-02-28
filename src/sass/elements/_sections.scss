@@ -1,0 +1,64 @@
+.section {
+  .desktop &,
+  .tablet & {
+    position: fixed;
+    box-shadow: 0 0 100px 0 RGBA(130,29,19,0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    pointer-events: none;
+    padding: 10px;
+    &.current {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 1;
+    }
+    &.next {
+      transform: translateY(100%);
+      z-index: 2;
+      &.to_current {
+        opacity: 1;
+        pointer-events: auto;
+        transition: transform 0.7s;
+        transform: translateY(0);
+      }
+    }
+    &.prev {
+      z-index: 2;
+      transform: translateY(-100%);
+      &.to_current {
+        opacity: 1;
+        pointer-events: auto;
+        transition: transform 0.7s;
+        transform: translateY(0);
+      }
+    }
+    &.scale {
+      transition: transform 0.7s;
+      transform: scale(0.8);
+    }
+  }
+  .mobile & {
+    flex-direction: column;
+  }
+  position: relative;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+}
+
+@import "sections/section01";
+@import "sections/section02";
+@import "sections/section03";
+@import "sections/section05";
+@import "sections/section08";
+@import "sections/section09";
+@import "sections/section12";
+@import "sections/section13";
+
+

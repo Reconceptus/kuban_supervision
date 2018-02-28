@@ -1,0 +1,28 @@
+.pluses {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-flow: wrap row;
+  li {
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 4%;
+    position: relative;
+    @include desktop-fonts(font-size,2.1vh,1.7vw,20rem);
+    @include desktop-fonts(margin-bottom,6vh,4.3vw,50rem);
+    @include tablet-fonts(font-size,14rem,15rem);
+    @include tablet-fonts(margin-bottom,24rem,28rem);
+    line-height: 1.6;
+    .mobile & {
+      font-size: 16rem;
+      margin-bottom: 20rem;
+      padding-left: 0;
+    }
+    i {
+      width: 24px;
+      height: 24px;
+      display: block;
+      margin-bottom: 12px;
+    }
+  }
+}

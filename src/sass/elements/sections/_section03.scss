@@ -1,0 +1,69 @@
+.section03 {
+  flex-direction: column;
+  .desktop &,
+  .tablet & {
+    background-image: url("../svg/map-grey.svg");
+    background-position: 98% 3%;
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+  }
+  .title {
+    @include desktop-fonts(font-size,2.4vh,2vw,20rem);
+    @include desktop-fonts(margin-bottom,8vh,8vw,70rem);
+    @include tablet-fonts(font-size,20rem,23rem);
+    @include tablet-fonts(margin-bottom,55rem,66rem);
+    .mobile & {
+      font-size: 15rem;
+      margin-bottom: 40rem;
+    }
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 30px;
+    font-family: Helvetica-Bold;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 15px;
+      height: 15px;
+      background-color: $red;
+      transform: translateY(-50%);
+    }
+  }
+  .mobile & {
+    padding: 30rem 5%;
+    .just-left {
+      display: flex;
+    }
+    .grid_bottom {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: flex-end;
+      .grid-el {
+        width: 25%;
+        &:not(:last-child){
+          margin-right: 20px;
+          @include media(screen,480){
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    .grid_top {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: flex-start;
+      .grid-el {
+        &:not(:last-child){
+          width: 18%;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+
+
+}

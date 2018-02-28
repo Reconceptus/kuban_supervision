@@ -1,0 +1,30 @@
+{
+  "name": "Kuban",
+  "version": "1.0.0",
+  "description": "gulp package",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "enenkoff",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.5",
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-newer": "^1.3.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^1.12.1",
+    "gulp-stylefmt": "^1.1.0"
+  },
+  "dependencies": {
+    "css-mqpacker": "^6.0.1",
+    "stylefmt": "^6.0.0"
+  }
+}

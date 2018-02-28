@@ -1,0 +1,27 @@
+.failure {
+
+  background-image: url("../svg/icon-rouble.svg");
+  background-repeat: no-repeat;
+  background-size: 50% auto;
+  background-position: 0 center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .title {
+    @include desktop-fonts(font-size,6vh,4.3vw,50rem);
+    @include tablet-fonts(font-size,31rem,28rem);
+    font-family: Helvetica-Bold;
+    @include desktop-fonts(margin-bottom,6.3vh,4.5vw,43rem);
+    @include tablet-fonts(margin-bottom,26rem,22rem);
+
+    .mobile & {
+      font-size: 20rem;
+      margin-bottom: 20rem;
+    }
+  }
+  .mobile & {
+    font-size: 20rem;
+    margin-bottom: 20rem;
+    background-size: auto 85%;
+  }
+}
