@@ -36,32 +36,18 @@ $(document).ready(function () {
     $('.gallery-wrap').each(function () {
         var $this = $('ul',this);
 
-        /*function item_moving() {
-            var list_item = $this.find('li:last');
-            list_item.css('display','none');
-            $this.find('ul').prepend(list_item)
-        }
-        item_moving();
-
-        setInterval(function () {
-            $this.find('li:first').fadeIn(3000);
-            item_moving();
-        },10000)*/
-
-        // $('li:gt(0)',$this).hide();
-
         setInterval(function() {
             var $first = $('li:first',$this);
-            $first.fadeOut(3500)
+            $first.fadeOut(2000)
 
             setTimeout(function () {
                 $first
                 .appendTo($this)
                 .fadeIn();
-            },3500)
+            },2000)
 
 
-        }, 10000);
+        }, 6000);
 
 
 
