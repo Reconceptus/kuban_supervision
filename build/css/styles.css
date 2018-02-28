@@ -253,11 +253,6 @@ textarea {
 
 /*---libs---*/
 /*---styles---*/
-.bullets span {
-  display: inline-block;
-  vertical-align: middle;
-}
-
 .section01,
 .animate .image {
   background-position: center center;
@@ -383,7 +378,7 @@ textarea {
   height: auto;
 }
 
-.header .logo:hover {
+.desktop .header .logo:hover {
   -webkit-transform: translateX(5px);
   -ms-transform: translateX(5px);
   transform: translateX(5px);
@@ -457,7 +452,7 @@ textarea {
   background-color: #E74C3C;
 }
 
-.header nav a:hover {
+.desktop .header nav a:hover {
   color: #E74C3C;
 }
 
@@ -2015,7 +2010,15 @@ h6 {
 .bullets {
   position: absolute;
   left: 50%;
-  bottom: 30px;
+  bottom: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -2401,12 +2404,12 @@ h6 {
   flex-direction: column;
 }
 
-.video-links a:hover figure {
+.desktop .video-links a:hover figure {
   -webkit-box-shadow: 0 5px 15px 0 RGBA(48, 52, 63, 0.5);
   box-shadow: 0 5px 15px 0 RGBA(48, 52, 63, 0.5);
 }
 
-.video-links a:hover .title {
+.desktop .video-links a:hover .title {
   color: #E74C3C;
 }
 
@@ -2590,6 +2593,11 @@ h6 {
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.desktop .objects .titles > li:hover {
+  -webkit-box-shadow: 0 3px 15px 0 RGBA(157, 154, 148, 0.7);
+  box-shadow: 0 3px 15px 0 RGBA(157, 154, 148, 0.7);
 }
 
 .mobile .objects .titles > li {
@@ -3809,11 +3817,6 @@ h6 {
 
   .portrait-size .failure .title {
     margin-bottom: 43rem;
-  }
-
-  .objects .titles > li:hover {
-    -webkit-box-shadow: 0 3px 15px 0 RGBA(157, 154, 148, 0.7);
-    box-shadow: 0 3px 15px 0 RGBA(157, 154, 148, 0.7);
   }
 
   .normal-size .objects .titles label {

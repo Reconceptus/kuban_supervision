@@ -56,11 +56,13 @@
       flex-direction: column;
     }
     &:hover {
-      figure {
-        box-shadow: 0 5px 15px 0 rgba($head,0.5);
-      }
-      .title {
-        color: $red;
+      .desktop & {
+        figure {
+          box-shadow: 0 5px 15px 0 rgba($head,0.5);
+        }
+        .title {
+          color: $red;
+        }
       }
     }
   }

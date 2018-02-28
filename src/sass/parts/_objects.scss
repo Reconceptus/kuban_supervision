@@ -6,7 +6,7 @@
       margin: 6px 0;
       transition: all 0.3s;
       &:hover {
-        @include media(hover,1201){
+        .desktop & {
           box-shadow: 0 3px 15px 0 rgba($text,0.7);
         }
       }

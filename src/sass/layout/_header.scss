@@ -44,7 +44,9 @@
       height: auto;
     }
     &:hover {
-      transform: translateX(5px);
+      .desktop & {
+        transform: translateX(5px);
+      }
     }
   }
   nav {
@@ -92,7 +94,9 @@
         }
       }
       &:hover {
-        color: $red;
+        .desktop & {
+          color: $red;
+        }
       }
       &.active {
         color: $red;
