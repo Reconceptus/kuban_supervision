@@ -246,8 +246,6 @@ $(document).ready(function () {
 
                 if($('[data-slide="'+$current+'"]').hasClass('items')){
 
-
-
                     $scroll = false;
                     var $thisSection = $('[data-slide="'+$current+'"]'),
                         $countItems = $thisSection.find('.slide').length;
