@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "css-mqpacker": "^6.0.1",
+    "express": "^4.16.2",
     "stylefmt": "^6.0.0"
   }
 }
