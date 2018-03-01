@@ -127,7 +127,8 @@ $(document).ready(function () {
 
         function scrollUpDown(delta) {
 
-            $('.current').addClass('scale');
+            // $('.current').addClass('scale');
+
 
             if(delta > 0) {
 
@@ -136,6 +137,7 @@ $(document).ready(function () {
                 setTimeout(function () {
                     $('[data-slide="'+$current+'"]').addClass('to_current');
                     $nothing = false;
+                    $('.current').addClass('scale');
                 },50);
 
                 var items_length = $('[data-slide="'+$current+'"]').find('.slide').length;
@@ -163,6 +165,7 @@ $(document).ready(function () {
                 setTimeout(function () {
                     $('[data-slide="'+$current+'"]').addClass('to_current');
                     $nothing = false;
+                    $('.current').addClass('scale');
                 },50);
 
                 $item_current = 1;

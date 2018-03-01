@@ -1,23 +1,20 @@
 .situation-table {
   width: 100%;
   box-sizing: border-box;
-  .desktop &,
-  .tablet & {
-    padding-left: 23%;
-    padding-right: 5%;
-  }
+  padding-left: 26%;
+  padding-right: 5%;
   table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
     text-align: left;
     border: none;
+    @include media(screen,1200){
+      table-layout: fixed;
+    }
     @include desktop-fonts(font-size,2.1vh,1.1vw,20rem);
     @include tablet-fonts(font-size,11rem,11rem);
-    .mobile & {
-      font-size: 12rem;
-    }
   }
+
   thead {
     width: 100%;
     tr {
@@ -28,50 +25,30 @@
     th {
       box-sizing: border-box;
       padding: 1vh 0 1vh 4%;
-      .mobile & {
-        font-size: 12rem;
-      }
     }
   }
   tbody {
+    tr {
+      border-top: 1px solid $text;
+    }
     td {
       box-sizing: border-box;
-      .desktop &,
-      .tablet & {
-        padding: 0 0 0 4%;
+
+      &.head{
+        width: 22%;
       }
       &:not(.head){
+        width: 26%;
+        padding: 0 0 0 4%;
         font-family: Helvetica-Black;
         line-height: 1;
-        border-top: 1px solid $text;
-        color: $head;
         @include desktop-fonts(font-size,3.7vh,1.7vw,26rem);
-        @include tablet-fonts(font-size,16rem,14rem);
-        .mobile & {
-          font-size: 16rem;
-          padding-left: 1vw;
-        }
       }
     }
     tr {
       &:last-child {
         td {
-          &:not(.head){
-            border-bottom: 1px solid $text;
-          }
-        }
-        .head {
-          & > div {
-            &:after {
-              content: "";
-              position: absolute;
-              top: 100%;
-              left: 0;
-              right: 0;
-              height: 1px;
-              background-color: $text;
-            }
-          }
+          border-bottom: 1px solid $text;
         }
       }
     }
@@ -83,15 +60,6 @@
       box-sizing: border-box;
       padding: 2.2vh 0 2.2vh 10%;
       position: relative;
-      &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background-color: $text;
-      }
     }
   }
 }

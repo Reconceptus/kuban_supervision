@@ -10,34 +10,52 @@
     opacity: 0;
     pointer-events: none;
     padding: 10px;
+    transform: translate3d(0,-100%,0);
+    //transition: transform 0.7s ease 0s;
     &.current {
       opacity: 1;
       pointer-events: auto;
       z-index: 1;
+      transform: translate3d(0,0,0);
+      & ~ .section {
+        transform: translate3d(0,100%,0);
+      }
     }
     &.next {
-      transform: translateY(100%);
+      //transform: translate3d(0,100%,0);
       z-index: 2;
+      opacity: 0;
       &.to_current {
         opacity: 1;
         pointer-events: auto;
-        transition: transform 0.7s;
-        transform: translateY(0);
+        transition: transform 0.7s ease 0s;
+        transform: translate3d(0,0,0);
+        will-change: transform;
       }
     }
     &.prev {
       z-index: 2;
-      transform: translateY(-100%);
+      //transform: translate3d(0,-100%,0);
+      opacity: 0;
       &.to_current {
         opacity: 1;
         pointer-events: auto;
-        transition: transform 0.7s;
-        transform: translateY(0);
+        transition: transform 0.7s ease 0s;
+        transform: translate3d(0,0,0);
+        will-change: transform;
       }
     }
+    //&.to_current {
+    //  opacity: 1;
+    //  pointer-events: auto;
+    //  transition: transform 0.7s ease 0s;
+    //  transform: translate3d(0,0,0);
+    //  will-change: transform;
+    //}
     &.scale {
-      transition: transform 0.7s;
-      transform: scale(0.8);
+      transition: transform 0.7s ease 0s;
+      transform: scale(0.8) translate3d(0,0,0);
+      will-change: transform;
     }
   }
   .mobile & {
@@ -49,6 +67,8 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  transform: scale(1) translate3d(0,0,0);
+  will-change: transform;
 
 }
 
