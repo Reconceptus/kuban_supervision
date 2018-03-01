@@ -1,5 +1,5 @@
 .section {
-  .desktop &,
+  .desktop:not(.Mac) &,
   .tablet & {
     position: fixed;
     box-shadow: 0 0 100px 0 RGBA(130,29,19,0.5);
@@ -10,21 +10,14 @@
     opacity: 0;
     pointer-events: none;
     padding: 10px;
-    transform: translate3d(0,-100%,0);
-    //transition: transform 0.7s ease 0s;
     &.current {
       opacity: 1;
       pointer-events: auto;
       z-index: 1;
-      transform: translate3d(0,0,0);
-      & ~ .section {
-        transform: translate3d(0,100%,0);
-      }
     }
     &.next {
-      //transform: translate3d(0,100%,0);
+      transform: translateY(100%);
       z-index: 2;
-      opacity: 0;
       &.to_current {
         opacity: 1;
         pointer-events: auto;
@@ -35,8 +28,7 @@
     }
     &.prev {
       z-index: 2;
-      //transform: translate3d(0,-100%,0);
-      opacity: 0;
+      transform: translateY(-100%);
       &.to_current {
         opacity: 1;
         pointer-events: auto;
@@ -45,13 +37,6 @@
         will-change: transform;
       }
     }
-    //&.to_current {
-    //  opacity: 1;
-    //  pointer-events: auto;
-    //  transition: transform 0.7s ease 0s;
-    //  transform: translate3d(0,0,0);
-    //  will-change: transform;
-    //}
     &.scale {
       transition: transform 0.7s ease 0s;
       transform: scale(0.8) translate3d(0,0,0);
@@ -69,6 +54,51 @@
   box-sizing: border-box;
   transform: scale(1) translate3d(0,0,0);
   will-change: transform;
+
+
+  .desktop.Mac & {
+    position: absolute;
+    box-shadow: 0 0 100px 0 RGBA(130,29,19,0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    padding: 10px;
+    //will-change: transform;
+    will-change: opacity;
+    transition: transform 0.7s ease 0.1s;
+    //transform: translate3d(0,-200%,0);
+    //&.mac_prev {
+    //  transform: translate3d(0,-100%,0);
+    //  opacity: 1;
+    //}
+    &.mac_current {
+      //transform: translate3d(0,0,0);
+      opacity: 1;
+      z-index: 5;
+
+      &.mac_top {
+        transform: translate3d(0,-100%,0);
+      }
+      &.mac_bottom {
+        transform: translate3d(0,100%,0);
+      }
+    }
+    &.mac_next {
+      //transform: translate3d(0,100%,0);
+      opacity: 1;
+      //z-index: 1;
+      //& ~ .section {
+      //  transform: translate3d(0,200%,0);
+      //}
+    }
+
+
+
+  }
 
 }
 

@@ -508,6 +508,8 @@ h6 {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 16rem;
+  height: 100%;
+  overflow: hidden;
 }
 
 .borders > div {
@@ -1463,7 +1465,7 @@ h6 {
   will-change: transform;
 }
 
-.desktop .section,
+.desktop:not(.Mac) .section,
 .tablet .section {
   position: fixed;
   -webkit-box-shadow: 0 0 100px 0 RGBA(130, 29, 19, 0.5);
@@ -1475,32 +1477,24 @@ h6 {
   opacity: 0;
   pointer-events: none;
   padding: 10px;
-  -webkit-transform: translate3d(0, -100%, 0);
-  transform: translate3d(0, -100%, 0);
 }
 
-.desktop .section.current,
+.desktop:not(.Mac) .section.current,
 .tablet .section.current {
   opacity: 1;
   pointer-events: auto;
   z-index: 1;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
 }
 
-.desktop .section.current ~ .section,
-.tablet .section.current ~ .section {
-  -webkit-transform: translate3d(0, 100%, 0);
-  transform: translate3d(0, 100%, 0);
-}
-
-.desktop .section.next,
+.desktop:not(.Mac) .section.next,
 .tablet .section.next {
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
   z-index: 2;
-  opacity: 0;
 }
 
-.desktop .section.next.to_current,
+.desktop:not(.Mac) .section.next.to_current,
 .tablet .section.next.to_current {
   opacity: 1;
   pointer-events: auto;
@@ -1514,13 +1508,15 @@ h6 {
   will-change: transform;
 }
 
-.desktop .section.prev,
+.desktop:not(.Mac) .section.prev,
 .tablet .section.prev {
   z-index: 2;
-  opacity: 0;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 
-.desktop .section.prev.to_current,
+.desktop:not(.Mac) .section.prev.to_current,
 .tablet .section.prev.to_current {
   opacity: 1;
   pointer-events: auto;
@@ -1534,7 +1530,7 @@ h6 {
   will-change: transform;
 }
 
-.desktop .section.scale,
+.desktop:not(.Mac) .section.scale,
 .tablet .section.scale {
   -webkit-transition: -webkit-transform 0.7s ease 0s;
   transition: -webkit-transform 0.7s ease 0s;
@@ -1552,6 +1548,45 @@ h6 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.desktop.Mac .section {
+  position: absolute;
+  -webkit-box-shadow: 0 0 100px 0 RGBA(130, 29, 19, 0.5);
+  box-shadow: 0 0 100px 0 RGBA(130, 29, 19, 0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  padding: 10px;
+  will-change: opacity;
+  -webkit-transition: -webkit-transform 0.7s ease 0.1s;
+  transition: -webkit-transform 0.7s ease 0.1s;
+  -o-transition: transform 0.7s ease 0.1s;
+  transition: transform 0.7s ease 0.1s;
+  transition: transform 0.7s ease 0.1s, -webkit-transform 0.7s ease 0.1s;
+}
+
+.desktop.Mac .section.mac_current {
+  opacity: 1;
+  z-index: 5;
+}
+
+.desktop.Mac .section.mac_current.mac_top {
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+}
+
+.desktop.Mac .section.mac_current.mac_bottom {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+
+.desktop.Mac .section.mac_next {
+  opacity: 1;
 }
 
 .section01 {
