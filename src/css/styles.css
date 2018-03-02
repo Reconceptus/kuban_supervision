@@ -495,6 +495,10 @@ h1, h2, h3, h4, h5, h6 {
           box-sizing: border-box;
   font-size: 16rem;
   height: 100%;
+}
+
+.desktop #main,
+.tablet #main {
   overflow: hidden;
 }
 
@@ -3349,6 +3353,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.desktop .situation-table,
+.tablet .situation-table {
   padding-left: 26%;
   padding-right: 5%;
 }
@@ -3403,7 +3411,16 @@ h1, h2, h3, h4, h5, h6 {
 .situation-table thead th {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.desktop .situation-table thead th,
+.tablet .situation-table thead th {
   padding: 1vh 0 1vh 4%;
+}
+
+.mobile .situation-table thead th {
+  padding: 1vh 1% 1vh 4%;
+  font-size: 14rem;
 }
 
 .situation-table tbody tr {

@@ -1,8 +1,12 @@
 .situation-table {
   width: 100%;
   box-sizing: border-box;
-  padding-left: 26%;
-  padding-right: 5%;
+
+  .desktop &,
+  .tablet & {
+    padding-left: 26%;
+    padding-right: 5%;
+  }
   table {
     width: 100%;
     border-collapse: collapse;
@@ -24,7 +28,15 @@
     }
     th {
       box-sizing: border-box;
-      padding: 1vh 0 1vh 4%;
+
+      .desktop &,
+      .tablet & {
+        padding: 1vh 0 1vh 4%;
+      }
+      .mobile & {
+        padding: 1vh 1% 1vh 4%;
+        font-size: 14rem;
+      }
     }
   }
   tbody {
