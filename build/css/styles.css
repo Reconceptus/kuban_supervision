@@ -1573,6 +1573,7 @@ h6 {
 .desktop.Mac .section.mac_current {
   opacity: 1;
   z-index: 5;
+  pointer-events: auto;
 }
 
 .desktop.Mac .section.mac_current.mac_top {
@@ -2089,6 +2090,83 @@ h6 {
   -webkit-transform: scale(4);
   -ms-transform: scale(4);
   transform: scale(4);
+}
+
+.mobile .navigation {
+  display: none;
+}
+
+.navigation .nav-prev,
+.navigation .nav-next {
+  position: absolute;
+  z-index: 3;
+  width: 30px;
+  height: 80px;
+  cursor: pointer;
+  overflow: hidden;
+  top: 50%;
+  margin-top: -40px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.navigation .nav-prev:after,
+.navigation .nav-next:after {
+  content: "";
+  width: 44px;
+  height: 44px;
+  border-style: none solid solid none;
+  border-width: 5px;
+  border-color: #9D9A94;
+  position: absolute;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.navigation .nav-next {
+  right: 10px;
+  margin-right: 1%;
+}
+
+.navigation .nav-next:after {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(-45deg) skew(-17deg, -17deg) translate(-29px, -12px);
+  -ms-transform: rotate(-45deg) skew(-17deg, -17deg) translate(-29px, -12px);
+  transform: rotate(-45deg) skew(-17deg, -17deg) translate(-29px, -12px);
+}
+
+.desktop .navigation .nav-next:hover:after {
+  border-color: #E74C3C;
+}
+
+.navigation .nav-prev {
+  left: 10px;
+  margin-left: 4%;
+}
+
+.navigation .nav-prev:after {
+  right: 0;
+  top: 31px;
+  -webkit-transform: rotate(-225deg) skew(-17deg, -17deg) translate(-29px, -12px);
+  -ms-transform: rotate(-225deg) skew(-17deg, -17deg) translate(-29px, -12px);
+  transform: rotate(-225deg) skew(-17deg, -17deg) translate(-29px, -12px);
+}
+
+.desktop .navigation .nav-prev:hover:after {
+  border-color: #E74C3C;
+}
+
+.slide:first-child.slide_current ~ .navigation .nav-prev {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slide-last.slide_current ~ .navigation .nav-next {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .graph {

@@ -1,0 +1,68 @@
+.navigation {
+  .mobile & {
+    display: none;
+  }
+  .nav-prev,
+  .nav-next {
+    position: absolute;
+    z-index: 3;
+    width: 30px;
+    height: 80px;
+    cursor: pointer;
+    overflow: hidden;
+    top: 50%;
+    margin-top: -40px;
+    transition: all 0.3s;
+    &:after {
+      content: "";
+      width: 44px;
+      height: 44px;
+      border-style: none solid solid none;
+      border-width: 5px;
+      border-color: $text;
+      position: absolute;
+      transition: all 0.3s;
+    }
+  }
+  .nav-next {
+    right: 10px;
+    margin-right: 1%;
+    &:after {
+      top: 0;
+      left: 0;
+      transform: rotate(-45deg) skew(-17deg,-17deg) translate(-29px,-12px);
+    }
+    &:hover {
+      .desktop & {
+        &:after {
+          border-color: $red;
+        }
+      }
+    }
+  }
+  .nav-prev {
+    left: 10px;
+    margin-left: 4%;
+    &:after {
+      right: 0;
+      top: 31px;
+      transform: rotate(-225deg) skew(-17deg,-17deg) translate(-29px,-12px);
+    }
+    &:hover {
+      .desktop & {
+        &:after {
+          border-color: $red;
+        }
+      }
+    }
+  }
+}
+
+.slide:first-child.slide_current ~ .navigation .nav-prev {
+  opacity: 0;
+  pointer-events: none;
+}
+.slide-last.slide_current ~ .navigation .nav-next {
+  opacity: 0;
+  pointer-events: none;
+}

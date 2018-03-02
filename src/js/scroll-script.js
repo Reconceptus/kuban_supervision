@@ -488,6 +488,35 @@ $(document).ready(function () {
 
 
 
+        });
+
+        $('.nav-next').click(function () {
+            $('[data-slide="'+$current+'"]').find('.slide').removeClass('no-anim');
+            $('[data-slide="'+$current+'"]')
+                .find('.slide_current').removeClass('slide_current');
+            $item_current = $item_current+1;
+            setTimeout(function () {
+                $('[data-slide="'+$current+'"]')
+                    .find('[data-item="'+$item_current+'"]')
+                    .addClass('slide_current');
+
+            },50);
+            $('[data-slide="'+$current+'"]').find('[data-bull]').removeClass('active');
+            $('[data-slide="'+$current+'"]').find('[data-bull="'+$item_current+'"]').addClass('active');
+        });
+        $('.nav-prev').click(function () {
+            $('[data-slide="'+$current+'"]').find('.slide').removeClass('no-anim');
+
+            $('[data-slide="'+$current+'"]')
+                .find('.slide_current').removeClass('slide_current');
+            $item_current = $item_current-1;
+            setTimeout(function () {
+                $('[data-slide="'+$current+'"]')
+                    .find('[data-item="'+$item_current+'"]')
+                    .addClass('slide_current');
+            },50);
+            $('[data-slide="'+$current+'"]').find('[data-bull]').removeClass('active');
+            $('[data-slide="'+$current+'"]').find('[data-bull="'+$item_current+'"]').addClass('active');
         })
 
     }
