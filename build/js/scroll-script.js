@@ -92,16 +92,29 @@ $(document).ready(function () {
 
             $current = $current-1;
             $('[data-slide="'+$current+'"]').addClass('prev');
+
+            //for mac
+            $('[data-slide]').removeClass('mac_next mac_top mac_bottom');
+            $('.mac_current').addClass('mac_bottom');
+            $('[data-slide="'+$current+'"]').addClass('mac_next');
+            //-
+
             setTimeout(function () {
                 $('[data-slide="'+$current+'"]').addClass('to_current');
                 $nothing = false;
             },50);
-            addActiveMenu()
+            addActiveMenu();
             setTimeout(function () {
                 $('.current').removeClass('current');
                 $('.to_current').addClass('current');
                 $('.section').removeClass('next prev scale to_current');
                 $scroll = true;
+
+                //for mac
+                $('[data-slide]').removeClass('mac_current mac_top mac_bottom');
+                $('.mac_next').addClass('mac_current');
+                $('.mac_next').removeClass('mac_next');
+                //-
 
             },700)
 
@@ -113,6 +126,14 @@ $(document).ready(function () {
 
             $current = $current+1;
             $('[data-slide="'+$current+'"]').addClass('next');
+
+            //for mac
+            $('[data-slide]').removeClass('mac_next mac_top mac_bottom');
+            $('.mac_current').addClass('mac_top');
+            $('[data-slide="'+$current+'"]').addClass('mac_next');
+            //-
+
+
             setTimeout(function () {
                 $('[data-slide="'+$current+'"]').addClass('to_current');
                 $nothing = false;
@@ -124,7 +145,11 @@ $(document).ready(function () {
                 $('.section').removeClass('next prev scale to_current');
                 $scroll = true;
 
-
+                //for mac
+                $('[data-slide]').removeClass('mac_current mac_top mac_bottom');
+                $('.mac_next').addClass('mac_current');
+                $('.mac_next').removeClass('mac_next');
+                //-
 
             },700)
 
@@ -227,20 +252,29 @@ $(document).ready(function () {
 
         function scrollLeftRight(delta) {
 
-            $('[data-slide="'+$current+'"]')
-                .find('.slide_current').removeClass('slide_current');
+
             if(delta > 0) {
 
+                $('[data-slide="'+$current+'"]').find('.slide').removeClass('no-anim');
+
+                $('[data-slide="'+$current+'"]')
+                    .find('.slide_current').removeClass('slide_current');
                 $item_current = $item_current-1;
                 setTimeout(function () {
                     $('[data-slide="'+$current+'"]')
                         .find('[data-item="'+$item_current+'"]')
                         .addClass('slide_current');
                 },50);
+                $('[data-slide="'+$current+'"]').find('[data-bull]').removeClass('active');
+                $('[data-slide="'+$current+'"]').find('[data-bull="'+$item_current+'"]').addClass('active');
 
             }
             else if(delta < 0){
 
+                $('[data-slide="'+$current+'"]').find('.slide').removeClass('no-anim');
+
+                $('[data-slide="'+$current+'"]')
+                    .find('.slide_current').removeClass('slide_current');
                 $item_current = $item_current+1;
                 setTimeout(function () {
                     $('[data-slide="'+$current+'"]')
@@ -248,10 +282,10 @@ $(document).ready(function () {
                         .addClass('slide_current');
 
                 },50);
-
+                $('[data-slide="'+$current+'"]').find('[data-bull]').removeClass('active');
+                $('[data-slide="'+$current+'"]').find('[data-bull="'+$item_current+'"]').addClass('active');
             }
-            $('[data-slide="'+$current+'"]').find('[data-bull]').removeClass('active');
-            $('[data-slide="'+$current+'"]').find('[data-bull="'+$item_current+'"]').addClass('active');
+
             setTimeout(function () {
                 $scroll = true;
 
@@ -264,7 +298,6 @@ $(document).ready(function () {
 
             $event_delta = event.deltaY;
 
-            console.log($event_delta)
             if($current == 1 && $event_delta > 0){
                 $nothing = true;
 
@@ -317,7 +350,7 @@ $(document).ready(function () {
                         },50);
                     }
                     else {
-                        $('[data-slide="'+$current+'"]').find('.slide').removeClass('no-anim');
+
                         scrollLeftRight($event_delta)
 
                     }
@@ -360,6 +393,13 @@ $(document).ready(function () {
 
                 $current = num;
                 $('[data-slide="'+$current+'"]').addClass('prev');
+
+                //for mac
+                $('[data-slide]').removeClass('mac_next mac_top mac_bottom');
+                $('.mac_current').addClass('mac_bottom');
+                $('[data-slide="'+$current+'"]').addClass('mac_next');
+                //-
+
                 setTimeout(function () {
                     $('[data-slide="'+$current+'"]').addClass('to_current');
                     $nothing = false;
@@ -374,6 +414,14 @@ $(document).ready(function () {
 
                 $current = num;
                 $('[data-slide="'+$current+'"]').addClass('next');
+
+                //for mac
+                $('[data-slide]').removeClass('mac_next mac_top mac_bottom');
+                $('.mac_current').addClass('mac_top');
+                $('[data-slide="'+$current+'"]').addClass('mac_next');
+                //-
+
+
                 setTimeout(function () {
                     $('[data-slide="'+$current+'"]').addClass('to_current');
                     $nothing = false;
@@ -397,6 +445,12 @@ $(document).ready(function () {
             },760)
             setTimeout(function () {
                 $scroll = true;
+
+                //for mac
+                $('[data-slide]').removeClass('mac_current mac_top mac_bottom');
+                $('.mac_next').addClass('mac_current');
+                $('.mac_next').removeClass('mac_next');
+                //-
 
             },780)
 
